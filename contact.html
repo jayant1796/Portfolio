@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<title>Method for contacting</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('https://source.unsplash.com/random/1920x1080') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @keyframes earth-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .form-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+  }
+  
+  .form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-group button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<style>
+  .loading:after {
+    content: "Loading...";
+  }
+</style>
+<body>
+
+<div class="form-container">
+  <h2>Method For contacting</h2>
+  <form id="myForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="about">Message</label>
+      <textarea id="about" name="about" rows="4" required></textarea>
+    </div>
+    
+    <div class="form-group">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  document.getElementById('myForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var formData = new FormData(this);
+    var formObject = {};
+    formData.forEach(function(value, key){
+      formObject[key] = value;
+    });
+    console.log(formObject); // Do whatever you want with the form data here
+  });
+</script>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    // Initialize EmailJS with your user ID
+    emailjs.init("jayantchoudhary1414@gmail.com");
+
+    // Function to send email using EmailJS
+    function sendEmail() {
+      emailjs.sendForm('service_0vbvtig', 'template_968yvr7', '#myForm')
+        .then(function(response) {
+          // On success, display success message using SweetAlert2
+          Swal.fire({
+            title: 'Success!',
+            text: 'Your message has been sent successfully.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          });
+        }, function(error) {
+          // On failure, display error message using SweetAlert2
+          Swal.fire({
+            title: 'Error!',
+            text: 'Oops... Something went wrong. Please try again later.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+          });
+        });
+    }
+
+    // Add event listener to the form for submission
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+      sendEmail(); // Call function to send email
+    });
+  </script>
+
+  <!-- Include SweetAlert2 library -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>
+
+
+
+
