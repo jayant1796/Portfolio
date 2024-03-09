@@ -338,7 +338,7 @@ noscript{
 
 .navbar-tabs-ul li:hover:before{
     content: "";
-    background-color: var(--color-white);
+    background-color: var(--color-purple);
     position: absolute;
     height: 10px;
     width: 10px;
