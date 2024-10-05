@@ -32,7 +32,9 @@ Push to the branch (git push origin feature-branch).
 Open a pull request.
 <h4>Customization</h4>
 Feel free to customize the site by modifying the following files:
+<br>
 
-index.html: For editing the structure of the web pages.
-styles.css: For changing the layout, color scheme, and typography.
+<br>
+index.html: For editing the structure of the web pages.<br>
+styles.css: For changing the layout, color scheme, and typography.<br>
 script.js (if applicable): For adding interactive features.
