@@ -12,7 +12,7 @@ CSS3: For styling and layout.
 JavaScript: For interactive elements and dynamic content.
 GitHub Pages: To host the website.
 <h4>How to Access</h4>
-The website is live at: https://jayant1796.github.io/Portfolio/.
+The website is live at: https://jayantkumar.netlify.app
 
 If you want to view the source code or contribute, follow these steps:
 
